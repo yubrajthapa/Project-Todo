@@ -18,6 +18,7 @@ def user_register(request):
         'form':userform
     }
     if request.method == "POST":
+        # object of models is created.
         userform = UserDetails()
         userform.first_name = request.POST.get('first_name')
         userform.middle_name = request.POST.get('middle_name')
@@ -33,6 +34,7 @@ def user_register(request):
 
 def user_login(request):
     userform = UserLoginForm()
+
     context = {
         'form':userform
     }
