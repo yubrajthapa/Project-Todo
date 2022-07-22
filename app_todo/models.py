@@ -10,7 +10,7 @@ class UserDetails(models.Model):
     is_verified = models.BooleanField()
 
     def __str__(self):
-        return self.first_name
+         return self.first_name
     
     class Meta:
         db_table = "User_Details"
@@ -22,8 +22,8 @@ class UserTodo(models.Model):
     is_completed = models.BooleanField()
     usertodo = models.ForeignKey(UserDetails, on_delete = models.CASCADE)
     
-    def __str__(self):
-        return self.todo
+    # def __str__(self):
+    #     return self.todo
 
     class Meta:
         db_table = "UserTodo"
