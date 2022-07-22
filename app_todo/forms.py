@@ -1,5 +1,5 @@
 from django import forms
-from app_todo.models import UserDetails, UserTodo
+from . models import *
 
 # creating forms
 class UserDetailsForm(forms.ModelForm):

@@ -17,3 +17,10 @@ def user_register(request):
         'form':userform
     }
     return render(request, 'users/register.html', context)
+
+def user_login(request):
+    userform = UserLoginForm()
+    context = {
+        'form':userform
+    }
+    return render(request, 'users/login.html', context)
