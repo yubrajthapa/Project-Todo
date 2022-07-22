@@ -4,7 +4,7 @@ from . models import *
 # creating forms
 class UserDetailsForm(forms.ModelForm):
     class Meta:
-        fields = ("first_name", "middle_name", "last_name", "contact")
+        fields = ("first_name", "middle_name", "last_name", "email", "contact", "password")
         model = UserDetails
 
 class UserLoginForm(forms.ModelForm):
