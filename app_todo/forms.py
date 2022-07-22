@@ -1,8 +1,10 @@
 from django import forms
+from django.forms import PasswordInput
 from . models import *
 
 # creating forms
 class UserDetailsForm(forms.ModelForm):
+    password = forms.CharField(widget=forms.PasswordInput)
     class Meta:
         fields = ("first_name", "middle_name", "last_name", "email", "contact", "password")
         model = UserDetails
