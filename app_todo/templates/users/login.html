@@ -20,8 +20,8 @@
                         <form action="#" method = "POST" >
                             {% csrf_token %}
                             {{form.as_p}}
-                            <input type = "submit" class="btn btn-primary text-uppercase" value = "register"><br>
-                            <a href="{% url 'user_register' %}" >Already Registered? Click Here</a>
+                            <input type = "submit" class="btn btn-primary text-uppercase" value = "login"><br>
+                            <a href="{% url 'user_register' %}" >New User? Click Here</a>
     
                         </form>
     

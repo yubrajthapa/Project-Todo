@@ -2,7 +2,7 @@ from http.client import HTTPResponse
 from django.shortcuts import redirect, render
 from django.http import HttpResponse
 # Importing forms to render it in html page
-from app_todo.forms import UserDetailsForm, UserLoginForm
+from .forms import *
 from . models import UserDetails
 
 # Create your views here.
@@ -34,8 +34,20 @@ def user_register(request):
 
 def user_login(request):
     userform = UserLoginForm()
-
     context = {
         'form':userform
     }
+    if request.method =="POST":
+        req_email = request.POST.get('email')
+        req_pass = request.POST.get('password')
+        try:
+            std_data = UserDetails.objects.get(email = req_email)
+            if std_data.password == req_pass:
+                return render(request,'users/homepage.html', context)
+            else:
+                return render(request,'users/login.html', context)
+        except:
+            return render(request,'users/login.html',context)
+
+
     return render(request, 'users/login.html', context)
