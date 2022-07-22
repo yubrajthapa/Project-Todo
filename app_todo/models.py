@@ -5,10 +5,10 @@ class UserDetails(models.Model):
     first_name = models.CharField(max_length=100)
     middle_name = models.CharField(max_length=100, null=True, blank=True)
     last_name = models.CharField(max_length=100)
-    email = models.EmailField()
+    email = models.EmailField(unique=True)
     password = models.CharField(max_length=150, null=True)
     contact = models.IntegerField()
-    is_verified = models.BooleanField()
+    is_verified = models.BooleanField(null=True, blank=True)
 
     def __str__(self):
          return self.first_name
